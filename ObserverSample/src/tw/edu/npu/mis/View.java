@@ -40,6 +40,12 @@ public class View implements Observer, Show{
         mName = name;
         mWindow = window;
         mModel = model;
+        /**
+     * view class建構子
+     * @param name
+     * @param window
+     * @param model 
+     */
     }
 
     /**

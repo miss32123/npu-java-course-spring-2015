@@ -32,17 +32,17 @@ package tw.edu.npu.mis;
  */
 public class AlternativeView implements Observer, Show{
     private final Model mModel;
-    //private boolean mIsValid;
-    
+
     private final String mName;
     private final Window mWindow;
     String s="";//宣告字串s
-    //private final Model mModel;
     
-    /*public AlternativeView(Model model) {
-        mModel = model;
-        mModel.attach(this);
-    }*/
+ /*
+ * AlternativeView class定義建構子
+ * @param name  
+ * @param window
+ * @param model 
+ */
     public AlternativeView(String name, Window window, Model model) {
         mName = name;
         mWindow = window;
@@ -59,7 +59,6 @@ public class AlternativeView implements Observer, Show{
     @Override
     public void update() {
         invalidate();
-        //mIsValid = false;
     }
 
     @Override
