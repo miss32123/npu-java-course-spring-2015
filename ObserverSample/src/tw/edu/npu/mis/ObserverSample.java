@@ -44,15 +44,15 @@ public class ObserverSample {
         List<Observer> views1 = new ArrayList<>();
         
        // Start the event loop.
-        window.startEventLoop(controller, views);
+       
         views1.add(new AlternativeView("AlternativeView", window, model));
      
         while (true) {
-            controller.readInput();
-            
+            controller.readInput(); //call controller readInput function
             for (Observer show : views1) {
                 show.update();
             }
+             window.startEventLoop(controller, views);
     }
 }
 }

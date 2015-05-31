@@ -35,6 +35,7 @@ public class AlternativeView implements Observer{
     private final Window mWindow;
     private final Model mModel;
     private boolean mchange;
+    String s="";
 
     public AlternativeView(String name, Window window, Model model) {
         mName = name;
@@ -47,9 +48,11 @@ public class AlternativeView implements Observer{
      */
     
     public void showview() {
+        if(!s.equals(mModel.getData())){
+            s=mModel.getData();
         System.out.print("AlternativeView: ");
         System.out.println(new StringBuilder(mModel.getData()).reverse());
-      
+        }
     }
 
     /**
