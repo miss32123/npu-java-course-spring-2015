@@ -36,7 +36,7 @@ public class AlternativeView implements Observer, Show{
     
     private final String mName;
     private final Window mWindow;
-    String s="";
+    String s="";//宣告字串s
     //private final Model mModel;
     
     /*public AlternativeView(Model model) {
@@ -47,7 +47,7 @@ public class AlternativeView implements Observer, Show{
         mName = name;
         mWindow = window;
         mModel = model;
-        mModel.attach(this);
+        mModel.attach(this);//mModel使用Subject裡的attach方法(加入AlternativeView)
     }
     
   private void invalidate() {
@@ -64,10 +64,10 @@ public class AlternativeView implements Observer, Show{
 
     @Override
     public void OnDraw() {
-      if(!s.equals(mModel.getData())){
-          s=mModel.getData();
+      if(!s.equals(mModel.getData())){//判斷輸入是否與舊字串相同或為空值
+          s=mModel.getData();//不同則把輸入丟入s
      
-      System.out.println("AlternativeView "+ new StringBuilder(mModel.getData()).reverse());
+      System.out.println("AlternativeView "+ new StringBuilder(mModel.getData()).reverse());//印出顛倒字串
     }
    }
 }

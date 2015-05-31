@@ -64,8 +64,8 @@ public class Window {
      * @param v View to redraw.
      */
     public void schduleRedraw(Show s) {
-       if(!mInvalidViews.contains(s)){
-            mInvalidViews.add(s);
+       if(!mInvalidViews.contains(s)){//假如mInvalidViews裡面不包含Show類型的s檔案則執行
+            mInvalidViews.add(s);//在mInvalidViews裡加入Show類型的s檔案
         }
     }
 }

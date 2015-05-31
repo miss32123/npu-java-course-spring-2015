@@ -37,12 +37,11 @@ public class ObserverSample {
 
     public static void main(String[] args) {
         // Initialize MVC and Window objects.
-         Window window = new Window();
-        Model model = new Model();
-        List<Show> views = new ArrayList<>();
-        Controller controller = new Controller(model);
-        views.add(new AlternativeView("View ", window, model));
-       window.startEventLoop(controller, views);
-    
+         Window window = new Window();//建立名叫window的Window.java類型的檔案
+        Model model = new Model();//建立名叫model的Model.java類型的檔案
+        List<Show> views = new ArrayList<>();//新建一個ArrayList名為views並指定為Show.java型態
+        Controller controller = new Controller(model); //建立名叫controller的Controller.java類型的檔案
+        views.add(new AlternativeView("View ", window, model));//在views新加入AlternatiView類型檔案
+        window.startEventLoop(controller, views);//呼叫window.java裡的startEventLoop方法(傳入controller,view的值)   
     }
 }

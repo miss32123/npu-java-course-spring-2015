@@ -34,17 +34,17 @@ import java.util.List;
  */
 public class Subject {
   
-    private List<Observer> mObservers = new ArrayList<>();
+    private List<Observer> mObservers = new ArrayList<>();//新建一個ArrayList名為mObservers並指定為Observer.java型態
     
-    public void attach(Observer o) {
-        mObservers.add(o);
+    public void attach(Observer o) {   //宣告attach方法
+        mObservers.add(o); //在mObserver新增傳入的Observer類型的o檔案
     }
-    public void detach(Observer o) {
-        mObservers.remove(o);
+    public void detach(Observer o) {//宣告detach方法
+        mObservers.remove(o);//在mObserver移除傳入的Observer類型的o檔案
     }
-    public void notifyObserver() {
-        for (Observer o : mObservers){
-            o.update();
+    public void notifyObserver() {//宣告notifyObserver方法
+        for (Observer o : mObservers){ //宣告for迴圈
+            o.update();//呼叫Observer.java裡的update()方法
         }
     }
     

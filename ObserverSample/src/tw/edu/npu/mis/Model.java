@@ -50,7 +50,7 @@ public class Model extends Subject {
      */
     public void setData(String data) {
         mData = data;
-        notifyObserver();
+        notifyObserver();//呼叫Subject裡的notifyObserver方法 通知Observer更新
     }
 
 }
