@@ -37,22 +37,12 @@ public class ObserverSample {
 
     public static void main(String[] args) {
         // Initialize MVC and Window objects.
-        Window window = new Window();
+         Window window = new Window();
         Model model = new Model();
+        List<Show> views = new ArrayList<>();
         Controller controller = new Controller(model);
-        List<View> views = new ArrayList<>();
-        List<Observer> views1 = new ArrayList<>();
-        
-       // Start the event loop.
-       
-        views1.add(new AlternativeView("AlternativeView", window, model));
-     
-        while (true) {
-            controller.readInput(); //call controller readInput function
-            for (Observer show : views1) {
-                show.update();
-            }
-             window.startEventLoop(controller, views);
+        views.add(new AlternativeView("View ", window, model));
+       window.startEventLoop(controller, views);
+    
     }
-}
 }
