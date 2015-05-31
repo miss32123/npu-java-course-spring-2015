@@ -34,7 +34,7 @@ public class AlternativeView implements Observer{
      private final String mName;
     private final Window mWindow;
     private final Model mModel;
-    private boolean change;
+    private boolean mchange;
 
     public AlternativeView(String name, Window window, Model model) {
         mName = name;
@@ -45,13 +45,11 @@ public class AlternativeView implements Observer{
     /**
      * Invalidate the view, which indicates it needs to be redrawn later.
      */
-    private boolean ichange(){
-        return change;
-    }
+    
     public void showview() {
         System.out.print("AlternativeView: ");
         System.out.println(new StringBuilder(mModel.getData()).reverse());
-        change = true;
+      
     }
 
     /**
