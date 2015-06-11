@@ -8,11 +8,14 @@ package tw.edu.npu.mis;
 /**
  * The model class of the calculator application.
  */
-public class Calculator {
+public class Calculator extends java.util.Observable{
+
+   
     
     /**
      * The available operators of the calculator.
      */
+
     public enum Operator {
         CLEAR,       // C
         CLEAR_ENTRY, // CE
@@ -32,9 +35,10 @@ public class Calculator {
         MEM_MINUS,   // M-
         MEM_RECALL   // MR
     }
-    
+    String s="";
     public void appendDigit(int digit) {
-        // TODO code application logic here
+      s+=String.valueOf(digit);
+      Show();
     }
     
     public void appendDot() {
@@ -53,8 +57,10 @@ public class Calculator {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+  
+ public String Show() {
+        setChanged();
+	notifyObservers(s);
+        return null;
     }
-
 }
