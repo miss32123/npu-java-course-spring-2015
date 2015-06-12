@@ -91,6 +91,7 @@ public class Calculator extends java.util.Observable{
                s="0";
                getDisplay();
                num1=0;num2=0;
+               s="";
                break;
            case PERCENT:
                num1 = Double.valueOf(s);
