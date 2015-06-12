@@ -10,7 +10,7 @@ package tw.edu.npu.mis;
  */
 public class Calculator extends java.util.Observable{
   String s="",Symbol;
-  int num1=0,num2=0;
+  double num1=0,num2=0;
   double x ;
     
     /**
@@ -50,25 +50,25 @@ public class Calculator extends java.util.Observable{
     public void performOperation(Operator operator) {
        switch(operator){
            case PLUS:
-          num1 = Integer.parseInt(s);
+          num1 = Double.valueOf(s);
           s= "";
           getDisplay() ;
           Symbol = "+";
                break;
            case MINUS:
-               num1 = Integer.parseInt(s);
+               num1 = Double.valueOf(s);
                s= "";
                getDisplay() ;
                Symbol = "-";
                break;
            case TIMES:
-                num1 = Integer.parseInt(s);
+                num1 = Double.valueOf(s);
                 s= "";
                 getDisplay() ;
                 Symbol = "*";
                break;
            case OVER:
-                num1 = Integer.parseInt(s);
+                num1 = Double.valueOf(s);
                 s= "";
                 getDisplay() ;
                 Symbol = "/";
@@ -79,41 +79,40 @@ public class Calculator extends java.util.Observable{
                Symbol="0";
                break;
            case PERCENT:
-               num1 = Integer.parseInt(s);
+               num1 = Double.valueOf(s);
+               s=String.valueOf(num1*0.01);
+                getDisplay();
                s="";
-               getDisplay();
-               Symbol = "%";
                break;
            case  RECIPROCAL:
-               x = Double.valueOf(s);
-               s = String.valueOf(1/x) ;
+               num1 = Double.valueOf(s);
+               s = String.valueOf(1/num1);
                getDisplay();
                s="";
-               Symbol = "1/x";
                break;
            
            case EQUAL:
                if(Symbol=="+"){
-                num2 = Integer.parseInt(s);
+                num2 = Double.valueOf(s);
                 s = String.valueOf(num1+num2);
                 getDisplay();
                 s= "";
                }
      
            if(Symbol=="-"){
-               num2 = Integer.parseInt(s);
+               num2 = Double.valueOf(s);
                 s = String.valueOf(num1-num2);
                 getDisplay();
                 s= "";
            }
             if(Symbol=="*"){
-                num2= Integer.parseInt(s);
+                num2= Double.valueOf(s);
                 s=String.valueOf(num1*num2);
                 getDisplay();
                 s= "";
             }
             if(Symbol=="/"){
-                num2= Integer.parseInt(s);
+                num2= Double.valueOf(s);
                 s=String.valueOf(num1/num2);
                 getDisplay();
                 s= "";
@@ -123,11 +122,6 @@ public class Calculator extends java.util.Observable{
                 num1=0;num2=0;
                 getDisplay();
             }
-            if(Symbol=="%"){
-                s="";
-                num1=0;num2=0;
-                getDisplay();
-            }   
            break;
        }
     }

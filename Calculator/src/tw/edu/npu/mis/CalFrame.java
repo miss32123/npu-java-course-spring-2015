@@ -140,6 +140,11 @@ Calculator Model;
 
         jButton11.setText(".");
         jButton11.setPreferredSize(new java.awt.Dimension(50, 30));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText("+");
         jButton12.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -375,6 +380,10 @@ Calculator Model;
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         Model.performOperation(Calculator.Operator.RECIPROCAL);
     }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+      Model.appendDot(jButton11.getText());
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
