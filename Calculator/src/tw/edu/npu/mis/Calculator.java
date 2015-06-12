@@ -51,11 +51,15 @@ public class Calculator extends java.util.Observable{
      * @param Dot 小數點
      */
     public void appendDot(String Dot) {
-         s += Dot;
-         getDisplay();
+       if (s.indexOf(".")<0)
+        {
+                   s += Dot;
+                 getDisplay();  
+       }
+        
     }
     /**
-     * 
+     * 運算功能
      * @param operator 運算符號
      */
     public void performOperation(Operator operator) {
