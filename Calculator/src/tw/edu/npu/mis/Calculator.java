@@ -81,7 +81,7 @@ public class Calculator extends java.util.Observable{
                 s= "";
                 getDisplay() ;
                 Symbol = "*";
-               break;
+                break;
            case OVER:
                 num1 = Double.valueOf(s);
                 s= "";
@@ -89,52 +89,45 @@ public class Calculator extends java.util.Observable{
                 Symbol = "/";
                break;
            case CLEAR:
-               s="";
+               s="0";
                getDisplay();
-               Symbol="0";
+               num1=0;num2=0;
                break;
            case PERCENT:
                num1 = Double.valueOf(s);
                s=String.valueOf(num1*0.01);
                 getDisplay();
-               s="";
                break;
            case  RECIPROCAL:
                num1 = Double.valueOf(s);
                s = String.valueOf(1/num1);
                getDisplay();
-               s="";
                break;
-           
+           case  PLUS_MINUS:
+               num1 = Double.valueOf(s);
+              s = String.valueOf(num1*-1);
+               getDisplay();
+               break;
            case EQUAL:
                if(Symbol=="+"){
                 num2 = Double.valueOf(s);
                 s = String.valueOf(num1+num2);
                 getDisplay();
-                s= "";
                }
      
            if(Symbol=="-"){
                num2 = Double.valueOf(s);
                 s = String.valueOf(num1-num2);
                 getDisplay();
-                s= "";
            }
             if(Symbol=="*"){
                 num2= Double.valueOf(s);
                 s=String.valueOf(num1*num2);
                 getDisplay();
-                s= "";
             }
             if(Symbol=="/"){
                 num2= Double.valueOf(s);
                 s=String.valueOf(num1/num2);
-                getDisplay();
-                s= "";
-            }
-           if(Symbol=="0"){
-                s="";
-                num1=0;num2=0;
                 getDisplay();
             }
            break;
