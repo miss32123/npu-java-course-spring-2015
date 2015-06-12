@@ -14,7 +14,9 @@ public class Calculator extends java.util.Observable{
   double x ;
     
     /**
-     * The available operators of the calculator.
+     * @param Symbol 判斷使用者按下何種運算符號
+     * @param num1,num2 用來儲存運算數字
+     * @param s 用來顯示
      */
 
     public enum Operator {
@@ -36,17 +38,26 @@ public class Calculator extends java.util.Observable{
         MEM_MINUS,   // M-
         MEM_RECALL   // MR
     }
-  
+  /**
+   * 
+   * @param digit 增加位數
+   */
     public void appendDigit(int digit) {
       s+=String.valueOf(digit);
       getDisplay();
     }
-    
+    /**
+     * 
+     * @param Dot 小數點
+     */
     public void appendDot(String Dot) {
          s += Dot;
          getDisplay();
     }
-    
+    /**
+     * 
+     * @param operator 運算符號
+     */
     public void performOperation(Operator operator) {
        switch(operator){
            case PLUS:
