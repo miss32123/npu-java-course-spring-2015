@@ -38,11 +38,12 @@ public class Calculator extends java.util.Observable{
     String s="";
     public void appendDigit(int digit) {
       s+=String.valueOf(digit);
-      Show();
+      getDisplay();
     }
     
-    public void appendDot() {
-        // TODO code application logic here
+    public void appendDot(String Dot) {
+       s += Dot;
+         getDisplay();
     }
     
     public void performOperation(Operator operator) {
@@ -50,17 +51,13 @@ public class Calculator extends java.util.Observable{
     }
     
     public String getDisplay() {
-        // TODO code application logic here
+         setChanged();
+	notifyObservers(s);
         return null;
     }
 
     /**
      * @param args the command line arguments
      */
-  
- public String Show() {
-        setChanged();
-	notifyObservers(s);
-        return null;
-    }
 }
+ 
