@@ -55,8 +55,7 @@ public class Calculator extends java.util.Observable{
         {
                    s += Dot;
                  getDisplay();  
-       }
-        
+       } 
     }
     /**
      * 運算功能
