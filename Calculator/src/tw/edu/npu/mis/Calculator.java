@@ -9,7 +9,8 @@ package tw.edu.npu.mis;
  * The model class of the calculator application.
  */
 public class Calculator extends java.util.Observable{
-
+  String s="",Symbol;
+  int num1=0,num2=0;
    
     
     /**
@@ -35,7 +36,7 @@ public class Calculator extends java.util.Observable{
         MEM_MINUS,   // M-
         MEM_RECALL   // MR
     }
-    String s="";
+  
     public void appendDigit(int digit) {
       s+=String.valueOf(digit);
       getDisplay();
@@ -47,7 +48,70 @@ public class Calculator extends java.util.Observable{
     }
     
     public void performOperation(Operator operator) {
-        // TODO code application logic here
+       switch(operator){
+           case PLUS:
+          num1 = Integer.parseInt(s);
+          s= "";
+          getDisplay() ;
+          Symbol = "+";
+               break;
+           case MINUS:
+               num1 = Integer.parseInt(s);
+               s= "";
+               getDisplay() ;
+               Symbol = "-";
+               break;
+           case TIMES:
+                num1 = Integer.parseInt(s);
+                s= "";
+                getDisplay() ;
+                Symbol = "*";
+               break;
+           case OVER:
+                num1 = Integer.parseInt(s);
+                s= "";
+                getDisplay() ;
+                Symbol = "/";
+               break;
+           case CLEAR:
+               s="";
+               getDisplay();
+               Symbol="0";
+               break;
+           case EQUAL:
+               if(Symbol=="+"){
+                num2 = Integer.parseInt(s);
+                s = String.valueOf(num1+num2);
+                getDisplay();
+                s= "";
+               }
+     
+           if(Symbol=="-"){
+               num2 = Integer.parseInt(s);
+                s = String.valueOf(num1-num2);
+                getDisplay();
+                s= "";
+           }
+            if(Symbol=="*"){
+                num2= Integer.parseInt(s);
+                s=String.valueOf(num1*num2);
+                getDisplay();
+                s= "";
+            }
+            if(Symbol=="/"){
+                num2= Integer.parseInt(s);
+                s=String.valueOf(num1/num2);
+                getDisplay();
+                s= "";
+            }
+           if(Symbol=="0"){
+                s="";
+                num1=0;num2=0;
+                getDisplay();
+            }
+           
+           break;
+       }
     }
     
     public String getDisplay() {
@@ -56,8 +120,5 @@ public class Calculator extends java.util.Observable{
         return null;
     }
 
-    /**
-     * @param args the command line arguments
-     */
 }
  
