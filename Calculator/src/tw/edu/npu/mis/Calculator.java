@@ -11,7 +11,7 @@ package tw.edu.npu.mis;
 public class Calculator extends java.util.Observable{
   String s="",Symbol;
   int num1=0,num2=0;
-   
+  double x ;
     
     /**
      * The available operators of the calculator.
@@ -43,7 +43,7 @@ public class Calculator extends java.util.Observable{
     }
     
     public void appendDot(String Dot) {
-       s += Dot;
+         s += Dot;
          getDisplay();
     }
     
@@ -78,6 +78,20 @@ public class Calculator extends java.util.Observable{
                getDisplay();
                Symbol="0";
                break;
+           case PERCENT:
+               num1 = Integer.parseInt(s);
+               s="";
+               getDisplay();
+               Symbol = "%";
+               break;
+           case  RECIPROCAL:
+               x = Double.valueOf(s);
+               s = String.valueOf(1/x) ;
+               getDisplay();
+               s="";
+               Symbol = "1/x";
+               break;
+           
            case EQUAL:
                if(Symbol=="+"){
                 num2 = Integer.parseInt(s);
@@ -109,7 +123,11 @@ public class Calculator extends java.util.Observable{
                 num1=0;num2=0;
                 getDisplay();
             }
-           
+            if(Symbol=="%"){
+                s="";
+                num1=0;num2=0;
+                getDisplay();
+            }   
            break;
        }
     }
