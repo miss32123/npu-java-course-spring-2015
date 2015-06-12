@@ -36,7 +36,9 @@ public class Calculator extends java.util.Observable{
         MEM_SET,     // MS
         MEM_PLUS,    // M+
         MEM_MINUS,   // M-
-        MEM_RECALL   // MR
+        MEM_RECALL,   // MR
+        SQUARE, //平方
+        CUBED //三次方
     }
   /**
    * 
@@ -107,6 +109,16 @@ public class Calculator extends java.util.Observable{
                num1 = Double.valueOf(s);
               s = String.valueOf(num1*-1);
                getDisplay();
+               break;
+           case SQUARE:
+               num1=Double.valueOf(s);
+               s=String.valueOf(num1*num1);
+                getDisplay();
+               break;
+           case CUBED:
+                num1=Double.valueOf(s);
+               s=String.valueOf(num1*num1*num1);
+                getDisplay();
                break;
            case EQUAL:
                if(Symbol=="+"){
